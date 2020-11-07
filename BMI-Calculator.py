@@ -2,6 +2,7 @@
 # BMI calculator
 # November 6, 2020
 
+
 # converts a person's height to meters, given feet and inches
 def height_to_meters(height):
     INCH_PER_FEET = 12
@@ -11,7 +12,6 @@ def height_to_meters(height):
     totalcm = totalInches * CM_PER_INCH
     totalm = totalcm * M_PER_CM
     return totalm
-
 
 # converts a persons weight in pounds to kilograms
 def pounds_to_kg(lbs):
@@ -55,8 +55,8 @@ def printMenu():
     print("Main menu: \n1. Calculate BMI \n2. Log Weight \n3. Quit")
 
 def log_weight(weight):
+    pass
 
-    
 
 # main
 def main():
@@ -80,4 +80,3 @@ def main():
     print("Goodbye!")
 
 main()
-
