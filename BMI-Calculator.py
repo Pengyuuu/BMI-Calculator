@@ -35,9 +35,28 @@ def getUserWeight():
     weight = input("Enter weight in pounds")
     return weight
 
+def evaluate_bmi(bmi):
+    UNDERWEIGHT = 18.5
+    HEALTHY = 24.9
+    OVERWEIGHT = 29.9
+    OBESE = 30
+    
+    if bmi < UNDERWEIGHT:
+        print("You are underweight.")
+    elif bmi >= UNDERWEIGHT and bmi <= HEALTHY:
+        print("You are healthy.")
+    elif bmi > HEALTHY and bmi <= OVERWEIGHT:
+        print("You are overweight.")
+    elif bmi >= OBESE:
+        print("You are obese.")
+
 # prints menu
 def printMenu():
     print("Main menu: \n1. Calculate BMI \n2. Log Weight \n3. Quit")
+
+def log_weight(weight):
+
+    
 
 # main
 def main():
@@ -53,13 +72,12 @@ def main():
             kilograms = pounds_to_kg(weight)
             bmi = calculate_bmi(kilograms, meters)
             print("Your BMI is: ", bmi)
+            evaluate_bmi()
 
         elif choice == 2:
             pass
 
     print("Goodbye!")
 
-
-
-
+main()
 
