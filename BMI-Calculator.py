@@ -3,11 +3,11 @@
 # November 6, 2020
 
 # converts a person's height to meters, given feet and inches
-def height_to_meters(ft,inches):
+def height_to_meters(height):
     INCH_PER_FEET = 12
     CM_PER_INCH = 2.54
     M_PER_CM = 0.01
-    totalInches = (ft*INCH_PER_FEET) + inches
+    totalInches = (height[0]*INCH_PER_FEET) + height[1]
     totalcm = totalInches * CM_PER_INCH
     totalm = totalcm * M_PER_CM
     return totalm
@@ -37,15 +37,28 @@ def getUserWeight():
 
 # prints menu
 def printMenu():
+    print("Main menu: \n1. Calculate BMI \n2. Log Weight \n3. Quit")
 
-
-
-
-
-
+# main
 def main():
+
     choice = 0
     while (choice != 3):
+        printMenu()
+
+        if choice == 1:
+            height = getUserHeight()
+            weight = getUserWeight()
+            meters = height_to_meters(height)
+            kilograms = pounds_to_kg(weight)
+            bmi = calculate_bmi(kilograms, meters)
+            print("Your BMI is: ", bmi)
+
+        elif choice == 2:
+            pass
+
+    print("Goodbye!")
+
 
 
 
