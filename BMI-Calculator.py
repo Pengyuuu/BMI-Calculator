@@ -2,6 +2,8 @@
 # BMI calculator
 # November 6, 2020
 
+import datetime
+
 
 # converts a person's height to meters, given feet and inches
 def height_to_meters(height):
@@ -58,9 +60,13 @@ def log_weight(weight):
 
     weightLog = open('weight', 'w')
 
-    
-    pass
+    # Gets current date and time from computer
+    timeNow = datetime.datetime.now()
 
+    # Writers user's weight alongside the timestamp
+    weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + weight)
+
+    weightLog.close()
 
 # main
 def main():
