@@ -55,6 +55,10 @@ def printMenu():
     print("Main menu: \n1. Calculate BMI \n2. Log Weight \n3. Quit")
 
 def log_weight(weight):
+
+    weightLog = open('weight', 'w')
+
+    
     pass
 
 
@@ -64,6 +68,8 @@ def main():
     choice = 0
     while (choice != 3):
         printMenu()
+
+        choice = int(input('Make a selection: '))
 
         if choice == 1:
             height = getUserHeight()
@@ -75,6 +81,12 @@ def main():
             evaluate_bmi()
 
         elif choice == 2:
+
+            weight = getUserWeight()
+
+            log_weight(weight)
+
+
             pass
 
     print("Goodbye!")
