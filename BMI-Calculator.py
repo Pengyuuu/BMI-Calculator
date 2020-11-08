@@ -2,6 +2,7 @@
 # BMI calculator
 # November 6, 2020
 
+from pathlib import Path
 import datetime
 
 
@@ -58,15 +59,39 @@ def printMenu():
 
 def log_weight(weight):
 
-    weightLog = open('weight', 'w')
+    myPath = Path("/weight.txt")
 
-    # Gets current date and time from computer
-    timeNow = datetime.datetime.now()
+    if myPath.is_file():
 
-    # Writers user's weight alongside the timestamp
-    weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + str(weight))
+        weightLog = open('weight.txt', 'r')
 
-    weightLog.close()
+        lines = weightLog.readlines()
+
+        weightLog.close()
+
+        weightLog = open('weight.txt', 'w')
+
+        for i in lines:
+
+            weightLog.write(i)
+
+        timeNow = datetime.datetime.now()
+
+        weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + str(weight))
+
+        weightLog.close()
+
+    else:
+
+        weightLog = open('weight.txt', 'w')
+
+        # Gets current date and time from computer
+        timeNow = datetime.datetime.now()
+
+        # Writers user's weight alongside the timestamp
+        weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + str(weight))
+
+        weightLog.close()
 
 # main
 def main():
