@@ -63,6 +63,7 @@ def log_weight(weight):
 
     if myPath.is_file():
 
+        # Opens the textfile and reads any lines already in there
         weightLog = open('weight.txt', 'r')
 
         lines = weightLog.readlines()
@@ -71,10 +72,12 @@ def log_weight(weight):
 
         weightLog = open('weight.txt', 'w')
 
+        # Rewrites any old lines
         for i in lines:
 
             weightLog.write(i)
 
+        # Writes in new data
         timeNow = datetime.datetime.now()
 
         weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + str(weight))
@@ -116,9 +119,6 @@ def main():
             weight = getUserWeight()
 
             log_weight(weight)
-
-
-            pass
 
     print("Goodbye!")
 
