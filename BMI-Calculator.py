@@ -34,7 +34,7 @@ def getUserHeight():
 
 # gets user's weight
 def getUserWeight():
-    weight = input("Enter weight in pounds")
+    weight = input("Enter weight in pounds: ")
     return weight
 
 def evaluate_bmi(bmi):
@@ -64,7 +64,7 @@ def log_weight(weight):
     timeNow = datetime.datetime.now()
 
     # Writers user's weight alongside the timestamp
-    weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + weight)
+    weightLog.write(timeNow.strftime("%Y-%m-%d %H:%M:%S") + ' - ' + str(weight))
 
     weightLog.close()
 
